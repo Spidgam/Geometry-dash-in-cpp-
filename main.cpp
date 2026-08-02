@@ -30,9 +30,9 @@ int main()
     roadline.setFillColor(sf::Color::White);
     roadline.setPosition({0,400});    
 
-    sf::RectangleShape characrer({40,40});
-    characrer.setFillColor(sf::Color::White);
-    characrer.setPosition({200,360}); 
+    sf::RectangleShape character({40,40});
+    character.setFillColor(sf::Color::White);
+    character.setPosition({200,360}); 
     
     while(window.isOpen())
     {
@@ -63,7 +63,7 @@ int main()
         window.draw(sprite2);
         window.draw(shadowsprite);
         window.draw(roadline);
-        window.draw(characrer);
+        window.draw(character);
         
 
         window.display();
