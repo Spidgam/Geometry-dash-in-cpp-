@@ -18,14 +18,14 @@ int main()
     sf::RenderWindow window(sf::VideoMode({960, 540}), "windows mog");
     window.setFramerateLimit(500);
     
-    sf::Texture texture("background1.jpg");
+    sf::Texture texture("images/background1.jpg");
     sf::Sprite sprite(texture);
     
-    sf::Texture texture2("background2.jpg");
+    sf::Texture texture2("images/background2.jpg");
     sf::Sprite sprite2(texture2);
     sprite.setPosition({950,0});
 
-    sf::Texture shadowline("shadowline.png");
+    sf::Texture shadowline("images/shadowline.png");
     sf::Sprite shadowsprite(shadowline);
     shadowsprite.setPosition({0,400});
 
@@ -33,7 +33,7 @@ int main()
     roadline.setFillColor(sf::Color::White);
     roadline.setPosition({0,400});    
 
-    sf::Texture characterTexture("character.png");
+    sf::Texture characterTexture("images/character.png");
     sf::Sprite character(characterTexture);
     character.setPosition({200,300});
     character.setScale({0.1,0.1});
@@ -63,6 +63,16 @@ int main()
         else
         {
             sprite2.move({-1,0});
+        }
+        
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space))
+        {
+
+            character.setPosition({200,200}); 
+        }
+        if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space))
+        {
+            character.setPosition({200,300});
         }
         window.draw(sprite);
         window.draw(sprite2);
