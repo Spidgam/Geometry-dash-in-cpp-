@@ -64,7 +64,6 @@ int main()
         {
             sprite2.move({-1,0});
         }
-        
         window.draw(sprite);
         window.draw(sprite2);
         window.draw(shadowsprite);
