@@ -9,6 +9,9 @@ int main()
     int bac2posx = 950;//background2 prime position x&y
     int bac2posy = 0;
 
+    float width = 960;
+    float hight = 540;
+
     
     
 
@@ -30,9 +33,12 @@ int main()
     roadline.setFillColor(sf::Color::White);
     roadline.setPosition({0,400});    
 
-    sf::RectangleShape character({40,40});
-    character.setFillColor(sf::Color::White);
-    character.setPosition({200,360}); 
+    sf::Texture characterTexture("character.png");
+    sf::Sprite character(characterTexture);
+    character.setPosition({200,300});
+    character.setScale({0.1,0.1});
+
+    
     
     while(window.isOpen())
     {
