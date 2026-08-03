@@ -1,4 +1,5 @@
 #include<iostream>
+#include"background.h"
 #include <SFML/Graphics.hpp>
 
 int main()
@@ -18,16 +19,15 @@ int main()
     sf::RenderWindow window(sf::VideoMode({960, 540}), "windows mog");
     window.setFramerateLimit(500);
     
-    sf::Texture texture("images/background1.jpg");
-    sf::Sprite sprite(texture);
-    
-    sf::Texture texture2("images/background2.jpg");
-    sf::Sprite sprite2(texture2);
-    sprite.setPosition({950,0});
+    background bac("images/background1.jpg");
 
     sf::Texture shadowline("images/shadowline.png");
     sf::Sprite shadowsprite(shadowline);
     shadowsprite.setPosition({0,400});
+
+    sf::Texture underlinetexture("images/background1.jpg");
+    sf::Sprite underline(underlinetexture);
+    underline.setPosition({0,400});
 
     sf::RectangleShape roadline({960,10});
     roadline.setFillColor(sf::Color::White);
@@ -48,22 +48,7 @@ int main()
                 window.close();
         }
         window.clear(sf::Color::Black);
-        if(sprite.getPosition().x==-950)
-        {
-            sprite.setPosition({950,0});
-        }
-        else
-        {
-            sprite.move({-1,0});
-        }
-        if(sprite2.getPosition().x==-950)
-        {
-            sprite2.setPosition({950,0});
-        }
-        else
-        {
-            sprite2.move({-1,0});
-        }
+        bac.update();
         
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space))
         {
@@ -74,8 +59,9 @@ int main()
         {
             character.setPosition({200,300});
         }
-        window.draw(sprite);
-        window.draw(sprite2);
+        
+        bac.draw(window);
+        window.draw(underline);
         window.draw(shadowsprite);
         window.draw(roadline);
         window.draw(character);
