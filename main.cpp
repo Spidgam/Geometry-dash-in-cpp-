@@ -1,5 +1,6 @@
 #include<iostream>
 #include"background.h"
+#include"line.h"
 #include <SFML/Graphics.hpp>
 
 int main()
@@ -21,17 +22,7 @@ int main()
     
     background bac("images/background1.jpg");
 
-    sf::Texture shadowline("images/shadowline.png");
-    sf::Sprite shadowsprite(shadowline);
-    shadowsprite.setPosition({0,400});
-
-    sf::Texture underlinetexture("images/background1.jpg");
-    sf::Sprite underline(underlinetexture);
-    underline.setPosition({0,400});
-
-    sf::RectangleShape roadline({960,10});
-    roadline.setFillColor(sf::Color::White);
-    roadline.setPosition({0,400});    
+    Line line("images/background1.jpg","images/shadowline.png");
 
     sf::Texture characterTexture("images/character.png");
     sf::Sprite character(characterTexture);
@@ -49,6 +40,7 @@ int main()
         }
         window.clear(sf::Color::Black);
         bac.update();
+        line.Update();
         
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space))
         {
@@ -61,9 +53,7 @@ int main()
         }
         
         bac.draw(window);
-        window.draw(underline);
-        window.draw(shadowsprite);
-        window.draw(roadline);
+        line.draw(window);
         window.draw(character);
         
 
