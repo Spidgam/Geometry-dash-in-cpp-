@@ -1,19 +1,14 @@
 #include<iostream>
 #include"background.h"
 #include"line.h"
+#include"Character.h"
 #include <SFML/Graphics.hpp>
 
 int main()
 {
-    int bac1posx = 0;//background1 prime position x&y
-    int bac1posy = 0;
-
-    int bac2posx = 950;//background2 prime position x&y
-    int bac2posy = 0;
-
     float width = 960;
     float hight = 540;
-
+    int counter = 0;
     
     
 
@@ -24,11 +19,7 @@ int main()
 
     Line line("images/background1.jpg","images/shadowline.png");
 
-    sf::Texture characterTexture("images/character.png");
-    sf::Sprite character(characterTexture);
-    character.setPosition({200,300});
-    character.setScale({0.1,0.1});
-
+    Character cha("images/character.png");
     
     
     while(window.isOpen())
@@ -39,22 +30,17 @@ int main()
                 window.close();
         }
         window.clear(sf::Color::Black);
+        
         bac.update();
         line.Update();
+        cha.jump();
         
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space))
-        {
-
-            character.setPosition({200,200}); 
-        }
-        if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space))
-        {
-            character.setPosition({200,300});
-        }
+        
         
         bac.draw(window);
         line.draw(window);
-        window.draw(character);
+        cha.draw(window);
+        
         
 
         window.display();
