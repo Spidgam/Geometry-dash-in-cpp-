@@ -17,7 +17,7 @@ void Character::jump()
     
     if(Charact.getPosition().y<300 && Charact.getPosition().y>=200)
     {
-        Charact.move({0,1});
+        Charact.move({0,0.5});
     }
        
     

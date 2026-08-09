@@ -16,7 +16,7 @@ void background::update()
     }
     else
     {
-        sprite1.move({-0.5,0});
+        sprite1.move({-0.3,0});
     }
     if(sprite2.getPosition().x<=-950)
     {
@@ -24,7 +24,7 @@ void background::update()
     }
     else
     {
-        sprite2.move({-0.5,0});
+        sprite2.move({-0.3,0});
     }
 }
 
