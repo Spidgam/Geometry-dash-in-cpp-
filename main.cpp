@@ -6,6 +6,12 @@
 
 int main()
 {
+    int bac1posx = 0;//background1 prime position x&y
+    int bac1posy = 0;
+
+    int bac2posx = 950;//background2 prime position x&y
+    int bac2posy = 0;
+
     float width = 960;
     float hight = 540;
     int counter = 0;
