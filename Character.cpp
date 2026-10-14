@@ -11,24 +11,38 @@ void Character::draw(sf::RenderWindow &window)
     window.draw(Charact);
 }
 
-void Character::jump()
+void Character::jump(int& stsbt)
 {
     
-    
-    if(Charact.getPosition().y<300 && Charact.getPosition().y>=200)
+    if(stsbt == 0)
+    {
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space))
+        {
+            
+            stsbt = 1;
+        }
+        
+    }
+    if(stsbt == 1&& Charact.getPosition().y == 200)
+    {
+        stsbt =2;
+    }
+    if(stsbt == 1)
+    {
+        Charact.move({0,-0.5});
+    }
+    if(stsbt==2 &&Charact.getPosition().y == 300)
+    {
+        stsbt = 0;
+    }
+    if(stsbt == 2)
     {
         Charact.move({0,0.5});
     }
-       
     
-    else
-    {
-       if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space))
-        {
+}
 
-            Charact.setPosition({200,200}); 
-     
-        }
-    }
-    
+int Character::getPosition()
+{
+    return Charact.getPosition().y;
 }

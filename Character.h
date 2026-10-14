@@ -12,6 +12,8 @@ class Character
     Character(const std::string& imagepath);
 
     void draw(sf::RenderWindow& window);
-    void jump();
+    void jump(int& stsbt);
+    int getPosition();
+    
 
 };

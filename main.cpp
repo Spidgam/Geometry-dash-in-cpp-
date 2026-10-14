@@ -9,7 +9,8 @@ int main()
     float width = 960;
     float hight = 540;
     int counter = 0;
-    
+    bool cjs; //represente the charecter courent mode jump or not
+    static int  stsbt = 0; // status bit, 0-stable, 1-jump, 2-falling
     
 
     sf::RenderWindow window(sf::VideoMode({960, 540}), "windows mog");
@@ -33,7 +34,8 @@ int main()
         
         bac.update();
         line.Update();
-        cha.jump();
+        cha.jump(stsbt);
+       
         
         
         
