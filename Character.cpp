@@ -39,6 +39,10 @@ void Character::jump(int& stsbt)
     {
         Charact.move({0,0.5});
     }
+    if(stsbt == 1 || stsbt == 2)
+    {
+        
+    }
     
 }
 

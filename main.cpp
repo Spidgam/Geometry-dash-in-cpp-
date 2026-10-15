@@ -43,8 +43,7 @@ int main()
         line.draw(window);
         cha.draw(window);
         
-        
-
+       
         window.display();
     }
 }
