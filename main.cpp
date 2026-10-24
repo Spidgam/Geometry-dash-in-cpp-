@@ -2,6 +2,7 @@
 #include"background.h"
 #include"line.h"
 #include"Character.h"
+#include "Spike.h"
 #include <SFML/Graphics.hpp>
 
 int main()
@@ -21,6 +22,8 @@ int main()
     Line line("images/background1.jpg","images/shadowline.png");
 
     Character cha("images/character.png");
+
+    Spike spi("images/spike.png");
     
     
     while(window.isOpen())
@@ -42,6 +45,8 @@ int main()
         bac.draw(window);
         line.draw(window);
         cha.draw(window);
+        spi.draw(window);
+
         
        
         window.display();
